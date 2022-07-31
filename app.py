@@ -6,6 +6,8 @@ import os
 import cvlib as cv
 from flask import Flask, render_template, Response
 
+app = Flask(__name__)
+
 # load model
 model = load_model('model/model_samp_bw.h5')
 
@@ -14,7 +16,7 @@ webcam = cv2.VideoCapture(0)
 
 # classes = ['man', 'woman']
 
-app = Flask(__name__)
+
 
 # loop through frames
 
