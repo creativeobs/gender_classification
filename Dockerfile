@@ -8,4 +8,4 @@ COPY . ./
 
 RUN pip install -r requirements.txt
 EXPOSE $PORT
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 50 app:app
+CMD exec web gunicorn app:app
