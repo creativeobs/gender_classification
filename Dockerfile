@@ -1,11 +1,7 @@
-FROM python:3.7
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
-ENV PYTHONUNBUFFERED True
+COPY ./requirements.txt /app/requirements.txt
 
-ENV APP_HOME /app
-WORKDIR $APP_HOME
-COPY . ./
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-RUN pip install -r requirements.txt
-EXPOSE $PORT
-CMD exec web gunicorn app:app
+COPY ./app /app/app
