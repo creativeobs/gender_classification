@@ -4,5 +4,4 @@ tensorflow
 numpy
 matplotlib
 opencv-python
-os
 cvliv
