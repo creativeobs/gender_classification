@@ -1,0 +1,8 @@
+Flask
+gunicorn
+tensorflow
+numpy
+matplotlib
+cv2
+os
+cvliv
