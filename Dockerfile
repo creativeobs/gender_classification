@@ -1,6 +1,11 @@
 FROM python:3.7
-COPY . /app
-WORKDIR /app
+
+ENV PYTHONUNBUFFERED True
+
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
+
 RUN pip install -r requirements.txt
 EXPOSE $PORT
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
