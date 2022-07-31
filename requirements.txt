@@ -3,6 +3,6 @@ gunicorn
 tensorflow
 numpy
 matplotlib
-cv2 == 4.6.0
+opencv-python
 os
 cvliv
